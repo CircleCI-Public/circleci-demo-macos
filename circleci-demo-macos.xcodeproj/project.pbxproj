@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		083AB8F421ED15A00068D66E /* EggTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083AB8F321ED15A00068D66E /* EggTimer.swift */; };
 		088A79FC21E7E91400570CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A79FB21E7E91400570CAD /* AppDelegate.swift */; };
 		088A79FE21E7E91400570CAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A79FD21E7E91400570CAD /* ViewController.swift */; };
 		088A7A0021E7E91400570CAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 088A79FF21E7E91400570CAD /* Assets.xcassets */; };
@@ -33,13 +34,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		083AB8ED21ED10520068D66E /* circleci-demo-macos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "circleci-demo-macos.entitlements"; sourceTree = "<group>"; };
+		083AB8F321ED15A00068D66E /* EggTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggTimer.swift; sourceTree = "<group>"; };
 		088A79F821E7E91400570CAD /* circleci-demo-macos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "circleci-demo-macos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		088A79FB21E7E91400570CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		088A79FD21E7E91400570CAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		088A79FF21E7E91400570CAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		088A7A0221E7E91400570CAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		088A7A0421E7E91400570CAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		088A7A0521E7E91400570CAD /* circleci_demo_macos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = circleci_demo_macos.entitlements; sourceTree = "<group>"; };
 		088A7A0A21E7E91400570CAD /* circleci-demo-macosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "circleci-demo-macosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		088A7A0E21E7E91400570CAD /* circleci_demo_macosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circleci_demo_macosTests.swift; sourceTree = "<group>"; };
 		088A7A1021E7E91400570CAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,6 +75,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		083AB8EF21ED108B0068D66E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				088A79FD21E7E91400570CAD /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		083AB8F021ED10A60068D66E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				083AB8F321ED15A00068D66E /* EggTimer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		083AB8F521ED398F0068D66E /* meta */ = {
+			isa = PBXGroup;
+			children = (
+				088A7A0421E7E91400570CAD /* Info.plist */,
+				083AB8ED21ED10520068D66E /* circleci-demo-macos.entitlements */,
+			);
+			path = meta;
+			sourceTree = "<group>";
+		};
 		088A79EF21E7E91400570CAD = {
 			isa = PBXGroup;
 			children = (
@@ -97,11 +124,11 @@
 			isa = PBXGroup;
 			children = (
 				088A79FB21E7E91400570CAD /* AppDelegate.swift */,
-				088A79FD21E7E91400570CAD /* ViewController.swift */,
+				083AB8F021ED10A60068D66E /* Model */,
+				083AB8EF21ED108B0068D66E /* View Controllers */,
 				088A79FF21E7E91400570CAD /* Assets.xcassets */,
 				088A7A0121E7E91400570CAD /* Main.storyboard */,
-				088A7A0421E7E91400570CAD /* Info.plist */,
-				088A7A0521E7E91400570CAD /* circleci_demo_macos.entitlements */,
+				083AB8F521ED398F0068D66E /* meta */,
 			);
 			path = "circleci-demo-macos";
 			sourceTree = "<group>";
@@ -192,6 +219,11 @@
 				TargetAttributes = {
 					088A79F721E7E91400570CAD = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					088A7A0921E7E91400570CAD = {
 						CreatedOnToolsVersion = 10.1;
@@ -256,6 +288,7 @@
 			files = (
 				088A79FE21E7E91400570CAD /* ViewController.swift in Sources */,
 				088A79FC21E7E91400570CAD /* AppDelegate.swift in Sources */,
+				083AB8F421ED15A00068D66E /* EggTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,10 +454,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "circleci-demo-macos/circleci_demo_macos.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "circleci-demo-macos/meta/circleci-demo-macos.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "circleci-demo-macos/Info.plist";
+				INFOPLIST_FILE = "circleci-demo-macos/meta/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -439,10 +472,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "circleci-demo-macos/circleci_demo_macos.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "circleci-demo-macos/meta/circleci-demo-macos.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "circleci-demo-macos/Info.plist";
+				INFOPLIST_FILE = "circleci-demo-macos/meta/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

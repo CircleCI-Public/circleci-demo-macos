@@ -1,11 +1,3 @@
-//
-//  circleci_demo_macosUITests.swift
-//  circleci-demo-macosUITests
-//
-//  Created by Tyler Sloane on 2019-01-10.
-//  Copyright © 2019 your-org. All rights reserved.
-//
-
 import XCTest
 
 class circleci_demo_macosUITests: XCTestCase {
