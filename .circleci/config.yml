@@ -13,6 +13,9 @@ jobs: # a basic unit of work in a run
           # build our application
           name: Build Application
           command: xcodebuild
+      - run:
+          name: Compress app for storage
+          command: zip -r app.zip build/Release/circleci-demo-macos.app
       - store_artifacts:
-          path: build/Release/circleci-demo-macos.app
-          destination: demo_app
+          path: app.zip
+          destination: app
