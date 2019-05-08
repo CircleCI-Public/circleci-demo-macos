@@ -7,9 +7,10 @@ jobs: # a basic unit of work in a run
       - checkout  # pull down code from your version control system.
       - run:
           name: Install extra required tools via homebrew
-          command: |
-            brew install ponysay
-            ponysay 'Brew-tastic!'
+          command: brew install ponysay
+      - run:
+          name: Use our newly installed homebrew command
+          command: ponysay 'Brew-tastic!'
       - run:
           # run our tests using xcode's cli tool `xcodebuild`
           name: Run Unit Tests
