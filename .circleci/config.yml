@@ -25,7 +25,7 @@ jobs: # a basic unit of work in a run
   test_build_medium_gen2:
     macos:
       xcode: 13.2.1
-    resource_class: macos.x86.mediun.gen2
+    resource_class: macos.x86.medium.gen2
     steps: 
       - checkout
       - run:
