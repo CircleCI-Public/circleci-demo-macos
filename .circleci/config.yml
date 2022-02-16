@@ -13,6 +13,7 @@ jobs: # a basic unit of work in a run
   build: 
     macos:
       xcode: 11.3.0 # indicate our selected version of Xcode
+    resource_class: medium
     steps: 
       - checkout
       - run:
@@ -30,7 +31,7 @@ jobs: # a basic unit of work in a run
   test_build_metal:
     macos:
       xcode: 13.2.1
-    resource: macos.x86.metal.gen1
+    resource_class: macos.x86.metal.gen1
     steps: 
       - checkout
       - run:
