@@ -1,21 +1,36 @@
 version: 2.1
 
 jobs: # a basic unit of work in a run
-  test: # your job name
+  test_build_medium_gen1:
     macos:
-      xcode: 13.2.1 # indicate our selected version of Xcode
-    steps: # a series of commands to run
-      - checkout  # pull down code from your version control system.
-      - run:
-          name: Run Unit Tests
-          command: xcodebuild test -scheme circleci-demo-macos
-
-  build: 
-    macos:
-      xcode: 11.3.0 # indicate our selected version of Xcode
+      xcode: 13.2.1
     resource_class: medium
     steps: 
       - checkout
+      - run:
+          name: Run Unit Tests
+          command: xcodebuild test -scheme circleci-demo-macos
+      - run:
+          # build our application
+          name: Build Application
+          command: xcodebuild
+      - run:
+          # compress Xcode's build output so that it can be stored as an artifact
+          name: Compress app for storage
+          command: zip -r app.zip build/Release/circleci-demo-macos.app
+      - store_artifacts: # store this build output. Read more: https://circleci.com/docs/2.0/artifacts/
+          path: app.zip
+          destination: app
+  
+  test_build_medium_gen2:
+    macos:
+      xcode: 13.2.1
+    resource_class: macos.x86.mediun.gen2
+    steps: 
+      - checkout
+      - run:
+          name: Run Unit Tests
+          command: xcodebuild test -scheme circleci-demo-macos
       - run:
           # build our application
           name: Build Application
@@ -51,12 +66,12 @@ jobs: # a basic unit of work in a run
           
 workflows:
   version: 2
-  test_build:
+  build_gen1:
     jobs:
-      - test
-      - build:
-          requires:
-            - test
-  metal_build:
+      - test_build_medium_gen1
+  build_gen2:
+    jobs:
+      - test_build_medium_gen2
+  build_metal:
     jobs:
       - test_build_metal
