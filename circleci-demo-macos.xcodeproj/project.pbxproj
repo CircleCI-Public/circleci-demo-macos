@@ -14,6 +14,7 @@
 		088A7A0321E7E91400570CAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 088A7A0121E7E91400570CAD /* Main.storyboard */; };
 		088A7A0F21E7E91400570CAD /* circleci_demo_macosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A7A0E21E7E91400570CAD /* circleci_demo_macosTests.swift */; };
 		088A7A1A21E7E91500570CAD /* circleci_demo_macosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A7A1921E7E91500570CAD /* circleci_demo_macosUITests.swift */; };
+		444BA76328AEC9C500006ABF /* .circleci in Resources */ = {isa = PBXBuildFile; fileRef = 444BA76228AEC9C500006ABF /* .circleci */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		088A7A1521E7E91500570CAD /* circleci-demo-macosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "circleci-demo-macosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		088A7A1921E7E91500570CAD /* circleci_demo_macosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circleci_demo_macosUITests.swift; sourceTree = "<group>"; };
 		088A7A1B21E7E91500570CAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		444BA76228AEC9C500006ABF /* .circleci */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .circleci; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		088A79EF21E7E91400570CAD = {
 			isa = PBXGroup;
 			children = (
+				444BA76228AEC9C500006ABF /* .circleci */,
 				088A79FA21E7E91400570CAD /* circleci-demo-macos */,
 				088A7A0D21E7E91400570CAD /* circleci-demo-macosTests */,
 				088A7A1821E7E91500570CAD /* circleci-demo-macosUITests */,
@@ -260,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				444BA76328AEC9C500006ABF /* .circleci in Resources */,
 				088A7A0021E7E91400570CAD /* Assets.xcassets in Resources */,
 				088A7A0321E7E91400570CAD /* Main.storyboard in Resources */,
 			);
@@ -462,7 +466,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "your-id.circleci-demo-macos";
+				PRODUCT_BUNDLE_IDENTIFIER = "pvhp-1.circleci-demo-macos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 			};
@@ -480,7 +484,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "your-id.circleci-demo-macos";
+				PRODUCT_BUNDLE_IDENTIFIER = "pvhp-1.circleci-demo-macos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 			};
