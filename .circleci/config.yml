@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs: # a basic unit of work in a run
-  test: # your job name
+  run-unit-tests: # your job name
     macos:
       xcode: 13.4.1 # indicate our selected version of Xcode
     steps: # a series of commands to run
@@ -28,10 +28,10 @@ jobs: # a basic unit of work in a run
           destination: app
           
 workflows:
-  version: 2
+  version: 3
   test_build:
     jobs:
-      - test
-      - build:
+      - build
+      - run-unit-tests:
           requires:
-            - test
+            - build
