@@ -28,7 +28,6 @@ jobs: # a basic unit of work in a run
           destination: app
           
 workflows:
-  version: 2
   test_build:
     jobs:
       - test
